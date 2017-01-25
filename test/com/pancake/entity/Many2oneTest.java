@@ -16,14 +16,17 @@ public class Many2oneTest {
 		Student student1 = new Student("student01", "male");
 		Student student2 = new Student("student02", "female");
 		
-		//设置关联关系
+		//设置双向多对一（一对多）关联关系
 		student1.setGrade(grade);
 		student2.setGrade(grade);
+		grade.getStudents().add(student1);
+		grade.getStudents().add(student2);
+		
 		Session session = HibernateUtil.getSession();
 		Transaction transaction = session.beginTransaction();
 		session.save(grade);
-		session.save(student1);
-		session.save(student2);
+//		session.save(student1);
+//		session.save(student2);
 		transaction.commit();
 		HibernateUtil.closeSession(session);
 	}

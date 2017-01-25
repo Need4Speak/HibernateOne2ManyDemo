@@ -17,7 +17,7 @@
 			<column name="sex"></column>
 		</property>
 		<!-- 配置多对一关联关系 -->
-		<many-to-one name="grade" class="com.pancake.entity.Grade" column="gid">
+		<many-to-one name="grade" class="com.pancake.entity.Grade" column="gid" cascade="all">
 		</many-to-one>
 	</class>
 
