@@ -6,6 +6,7 @@ public class Student implements Serializable {
 	private int sid;
 	private String sname;
 	private String sex;
+	private Grade grade;
 
 	public Student() {
 		super();
@@ -16,7 +17,6 @@ public class Student implements Serializable {
 		this.sname = sname;
 		this.sex = sex;
 	}
-	
 
 	@Override
 	public String toString() {
@@ -46,6 +46,14 @@ public class Student implements Serializable {
 
 	public void setSex(String sex) {
 		this.sex = sex;
+	}
+
+	public Grade getGrade() {
+		return grade;
+	}
+
+	public void setGrade(Grade grade) {
+		this.grade = grade;
 	}
 
 }
